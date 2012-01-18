@@ -82,6 +82,8 @@ module ActiveMerchant #:nodoc:
                 xml.tag! 'n2:OrderDescription', options[:description]
 
                 add_items_xml(xml, options, currency_code) if options[:items]
+
+                add_address(xml, 'n2:ShipToAddress', options[:shipping_address]) if options[:shipping_address]
               end
             end
           end
